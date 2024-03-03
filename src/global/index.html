@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>The Merge React App</title>
+	<script>
+		// noinspection SpellCheckingInspection
+		window.neon = {
+			namespace: 'neon/v1',
+			organizationId: 'agapelivesandbox',
+			clientId: 'CNmBhU5CaIuEOqZLS7htlYv-H3FaTXn1wWCEWq1x_-b6ctzv61hMuxz5zGR8qaaqGhUnvp93U6SiwnGNBccIECIDmQaR_7cqD2j3M8ZnvOw=',
+			merchantId: '914',
+			payApiKey: 'public_bceb1e216586bf022c80cd988679c3d1417d7c5aaec95efc30e63b88',
+			payJsUrl: '/data/scripts/neonpay.js',
+			pages: {
+				onlineStore: '/',
+				events: '/',
+				donations: '/',
+				thankYouPage: '/',
+				oneTimeDonationThankYouPage: '/',
+				recurringDonationThankYouPage: '/'
+			},
+			subscriptionNewsLatterId: 3,
+			subscriptionBlogId: 5
+		};
+		window.livestream = {
+			namespace: 'livestream/v1',
+			pages: {
+				livestream: '/',
+			}
+		};
+	</script>
+	<script src="/data/scripts/react.js"></script>
+	<script src="/data/scripts/react-dom.js"></script>
+	<script src="/data/scripts/hooks.js"></script>
+	<script src="/data/scripts/i18n.js"></script>
+	<script src="/data/scripts/escape-html.js"></script>
+	<script src="/data/scripts/element.js"></script>
+	<script src="/data/scripts/api-fetch.js"></script>
+	<script id="wp-i18n-js-after">
+		wp.i18n.setLocaleData({ 'text direction\u0004ltr': ['ltr'] });
+	</script>
+</head>
+<body>
+	<div class="neon-auth neon-auth_loading"></div>
+	<div class="neon-online-store neon-online-store_loading"></div>
+	<div class="neon-account neon-account_loading"></div>
+	<div class="neon-donations neon-donations_loading"></div>
+	<div class="neon-events neon-events_loading"></div>
+	<div class="livestream livestream_loading"></div>
+	<div class="neon-cart-checkout neon-cart-checkout_loading"></div>
+	<div class="subscription-news"></div>
+	<div class="subscription-blog"></div>
+</body>
+</html>

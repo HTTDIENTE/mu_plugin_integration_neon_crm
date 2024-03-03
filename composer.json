@@ -1,0 +1,23 @@
+{
+	"name": "wld/the-merge",
+	"minimum-stability": "stable",
+	"require": {
+    "php": ">=8.0",
+		"ext-json": "*",
+		"vimeo/vimeo-api": "^3.0"
+	},
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
+  },
+	"config": {
+    "vendor-dir": "includes/vendor",
+    "platform": {
+      "php": "8.0"
+    }
+  },
+	"autoload": {
+		"classmap": [
+			"includes/classes"
+		]
+	}
+}

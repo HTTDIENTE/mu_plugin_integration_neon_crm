@@ -1,0 +1,15 @@
+### GET Catalogs
+GET https://api.neoncrm.com/v2/store/catalogs
+Authorization: Basic {{BASIC}}
+
+### GET Categories
+GET https://api.neoncrm.com/v2/store/categories
+Authorization: Basic {{BASIC}}
+
+### GET Products
+GET https://api.neoncrm.com/v2/store/products/
+Authorization: Basic {{BASIC}}
+
+### GET Product
+GET https://api.neoncrm.com/v2/store/products/272
+Authorization: Basic {{BASIC}}

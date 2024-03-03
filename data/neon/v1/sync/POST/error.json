@@ -1,0 +1,11 @@
+{
+  "code": "neon_error",
+  "message": "An error has occurred",
+  "data": {
+    "status": 500,
+    "errors": {
+      "code": "post_sync_sync_failed",
+      "message": "not_authorized"
+    }
+  }
+}

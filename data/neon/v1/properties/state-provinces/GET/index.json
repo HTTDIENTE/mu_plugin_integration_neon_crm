@@ -1,0 +1,389 @@
+{
+  "code": "get_neon_properties_state_provinces",
+  "message": "Success",
+  "data": {
+    "stateProvinces": [
+      {
+        "code": "AL",
+        "name": "Alabama",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "AK",
+        "name": "Alaska",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "AZ",
+        "name": "Arizona",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "AR",
+        "name": "Arkansas",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "CA",
+        "name": "California",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "CO",
+        "name": "Colorado",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "CT",
+        "name": "Connecticut",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "DE",
+        "name": "Delaware",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "DC",
+        "name": "District of Columbia",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "FL",
+        "name": "Florida",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "GA",
+        "name": "Georgia",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "HI",
+        "name": "Hawaii",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "ID",
+        "name": "Idaho",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "IL",
+        "name": "Illinois",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "IN",
+        "name": "Indiana",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "IA",
+        "name": "Iowa",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "KS",
+        "name": "Kansas",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "KY",
+        "name": "Kentucky",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "LA",
+        "name": "Louisiana",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "ME",
+        "name": "Maine",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "MD",
+        "name": "Maryland",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "MA",
+        "name": "Massachusetts",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "MI",
+        "name": "Michigan",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "MN",
+        "name": "Minnesota",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "MS",
+        "name": "Mississippi",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "MO",
+        "name": "Missouri",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "MT",
+        "name": "Montana",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "NE",
+        "name": "Nebraska",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "NV",
+        "name": "Nevada",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "NH",
+        "name": "New Hampshire",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "NJ",
+        "name": "New Jersey",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "NM",
+        "name": "New Mexico",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "NY",
+        "name": "New York",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "NC",
+        "name": "North Carolina",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "ND",
+        "name": "North Dakota",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "OH",
+        "name": "Ohio",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "OK",
+        "name": "Oklahoma",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "OR",
+        "name": "Oregon",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "PA",
+        "name": "Pennsylvania",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "RI",
+        "name": "Rhode Island",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "SC",
+        "name": "South Carolina",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "SD",
+        "name": "South Dakota",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "TN",
+        "name": "Tennessee",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "TX",
+        "name": "Texas",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "UT",
+        "name": "Utah",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "VT",
+        "name": "Vermont",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "VA",
+        "name": "Virginia",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "WA",
+        "name": "Washington",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "WV",
+        "name": "West Virginia",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "WI",
+        "name": "Wisconsin",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "WY",
+        "name": "Wyoming",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "AS",
+        "name": "American Samoa",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "FM",
+        "name": "Federated States of Micronesia",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "GU",
+        "name": "Guam",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "MH",
+        "name": "Marshall Islands",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "MP",
+        "name": "Northern Mariana Islands",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "PW",
+        "name": "Palau",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "PR",
+        "name": "Puerto Rico",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "UM",
+        "name": "U.S. Minor Outlying Islands",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "VI",
+        "name": "Virgin Islands",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "AA",
+        "name": "Armed Forces Americas",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "AE",
+        "name": "Armed Forces Europe, the Middle East, an",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "AP",
+        "name": "Armed Forces Pacific",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "AB",
+        "name": "Alberta",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "BC",
+        "name": "British Columbia",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "MB",
+        "name": "Manitoba",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "NB",
+        "name": "New Brunswick",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "NL",
+        "name": "Newfoundland and Labrador",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "NS",
+        "name": "Nova Scotia",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "NT",
+        "name": "Northwest Territories",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "NU",
+        "name": "Nunavut Territory",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "ON",
+        "name": "Ontario",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "PE",
+        "name": "Prince Edward Island",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "QC",
+        "name": "Quebec",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "SK",
+        "name": "Saskatchewan",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "YT",
+        "name": "Yukon Territory",
+        "status": "ACTIVE"
+      }
+    ],
+    "status": 200
+  }
+}

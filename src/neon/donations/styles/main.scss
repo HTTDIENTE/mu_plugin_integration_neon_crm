@@ -1,0 +1,84 @@
+.neon-donations {
+	background: yellowgreen;
+	padding: 20px;
+
+	&__title {
+		max-width: 1200px;
+		margin: 0 auto;
+		font-family: sans-serif;
+	}
+}
+
+.recurring-donations {
+	.ant-table-title {
+		margin-bottom: 0;
+		font-weight: 600;
+	}
+}
+
+.recurring-donat {
+	margin-bottom: 20px;
+
+	&__forms {
+		display: flex;
+		align-items: flex-start;
+		gap: 50px;
+
+		&_edit-amount {
+			width: 30%;
+		}
+
+		&_edit-payment {
+			width: calc(70% - 50px);
+		}
+	}
+
+	&__form-title {
+		width: 100%;
+	}
+
+	&__delete {
+		border: none;
+		background: none;
+		color: #f33;
+	}
+
+	&__button {
+		display: inline-block;
+		font-family: sans-serif;
+		padding: 8px 20px;
+		background-color: transparent;
+		border: 1px solid #383838;
+		color: #383838;
+		cursor: pointer;
+		transition: 0.3s;
+
+		&:hover {
+			background-color: #383838;
+			color: #93a1a1;
+		}
+	}
+
+	&__amount-btn {
+		display: inline-block;
+		font-family: sans-serif;
+		padding: 7px 10px 5px;
+		background-color: transparent;
+		border: 1px solid dimgray;
+		color: dimgray;
+		text-transform: uppercase;
+		cursor: pointer;
+		transition: 0.3s;
+		margin-right: 10px;
+
+		&:hover {
+			background-color: #1677ff;
+			color: #fff;
+			border: 1px solid #1677ff;
+		}
+	}
+
+	button {
+		cursor: pointer;
+	}
+}

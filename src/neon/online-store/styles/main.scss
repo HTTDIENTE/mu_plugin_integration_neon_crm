@@ -1,0 +1,11 @@
+@import '../styles/shop.scss';
+@import '../styles/product.scss';
+
+.neon-online-store {
+  	background: slategray;
+	padding: 20px;
+
+	&__loading {
+		min-height: 380px;
+	}
+}

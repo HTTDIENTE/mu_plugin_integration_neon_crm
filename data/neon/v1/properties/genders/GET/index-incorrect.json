@@ -1,0 +1,33 @@
+{
+  "code": "get_neon_properties_genders",
+  "message": "Success",
+  "data": {
+    "genders": [
+      {
+        "code": "M",
+        "description": "Man",
+        "status": "ACTIVE",
+        "position": 1
+      },
+      {
+        "code": "NB",
+        "description": "Non-binary",
+        "status": "ACTIVE",
+        "position": 2
+      },
+      {
+        "code": "NA",
+        "description": "Prefer not to say",
+        "status": "ACTIVE",
+        "position": 3
+      },
+      {
+        "code": "W",
+        "description": "Woman",
+        "status": "ACTIVE",
+        "position": 4
+      }
+    ],
+    "status": 200
+  }
+}

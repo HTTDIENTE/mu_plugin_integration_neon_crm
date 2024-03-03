@@ -1,0 +1,7 @@
+{
+  "code": "delete_neon_auth",
+  "message": "Success",
+  "data": {
+    "status": 200
+  }
+}

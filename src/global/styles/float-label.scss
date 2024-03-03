@@ -1,0 +1,47 @@
+$x-padding: 20px;
+$y-padding: 5px;
+$label-font-size: 10px;
+$field-font-size: 14px;
+
+.float-label {
+	.ant-row {
+		position: relative;
+	}
+
+	.ant-input,
+	.ant-select-selector,
+	.ant-select-selection-search-input {
+		height: calc($y-padding + $label-font-size + $y-padding + $field-font-size + $y-padding * 2) !important;
+		padding: calc($y-padding + $label-font-size) $x-padding $y-padding !important;
+	}
+
+	.ant-select-selection-search {
+		inset-inline-start: 0 !important;
+		inset-inline-end: 0 !important;
+	}
+
+	.ant-select-selection-item {
+		line-height: calc($field-font-size + $y-padding) !important;
+	}
+
+	.ant-input-password {
+		padding: 0 calc($x-padding / 2) 0 0 !important;
+	}
+
+	.ant-form-item-label {
+		position: absolute;
+		left: $x-padding;
+		top: $y-padding;
+		z-index: 2;
+		transition: transform 0.3s;
+	}
+
+	&_used .ant-form-item-label {
+		transform: translateY(-$label-font-size);
+		pointer-events: none;
+
+		label {
+			font-size: $label-font-size !important;
+		}
+	}
+}

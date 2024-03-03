@@ -1,0 +1,7 @@
+{
+  "code": "invalid_response_code",
+  "message": "Unexpected System error occurred.",
+  "data": {
+    "status": 500
+  }
+}

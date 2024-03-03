@@ -1,0 +1,42 @@
+{
+  "code": "get_neon_events",
+	"message": "",
+	"data": {
+    "events": [
+      {
+        "id": 123,
+        "neonEventId": 321,
+        "title": "Lorem ipsum dolor sit amet",
+        "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "description": "<p>lorem ipsum</p>",
+        "startDatetimeGMT": "2017-07-21T17:32:28Z",
+        "endDatetimeGMT": "2017-07-21T17:32:28Z",
+        "registrationOpenDatetimeGMT": "2017-07-21T17:32:28Z",
+        "registrationCloseDatetimeGMT": "2017-07-21T17:32:28Z",
+        "categoryId": 1,
+        "categoryTitle": "Online Seminar",
+        "fees": null,
+        "needDonation": true,
+        "needPayment": false,
+        "needRegister": true
+      },
+      {
+        "id": 124,
+        "neonEventId": 321,
+        "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "description": "<p>lorem ipsum</p>",
+        "startDatetimeGMT": "2017-07-21T17:32:28Z",
+        "endDatetimeGMT": "2017-07-21T17:32:28Z",
+        "registrationOpenDatetimeGMT": "2017-07-21T17:32:28Z",
+        "registrationCloseDatetimeGMT": "2017-07-21T17:32:28Z",
+        "categoryId": 1,
+        "categoryTitle": "Online Seminar",
+        "fees": null,
+        "needDonation": true,
+        "needPayment": false,
+        "needRegister": true
+      }
+    ]
+  }
+}

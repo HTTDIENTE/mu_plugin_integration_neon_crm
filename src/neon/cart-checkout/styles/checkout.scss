@@ -1,0 +1,95 @@
+.checkout {
+	&__wrapper {
+		display: flex;
+		gap: 50px;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	&__shipping-details {
+		width: 65%;
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+
+		.inactive {
+			opacity: 0.7;
+		}
+	}
+
+	&__shipping-options {
+		.ant-form-item {
+			.ant-form-item-control-input {
+				min-height: auto;
+			}
+		}
+	}
+
+	&__cart-items {
+		width: 35%;
+	}
+
+	&__title {
+		font-weight: 500;
+		color: #383838;
+		text-transform: uppercase;
+		margin: 0 0 15px;
+	}
+
+	&__total {
+		display: flex;
+		justify-content: space-between;
+		font-weight: 500;
+		font-size: 16px;
+
+		p {
+			margin: 0 0 15px;
+		}
+	}
+
+	&__dropdown {
+		width: 100%;
+	}
+
+	&__empty {
+		font-weight: 500;
+		font-size: 25px;
+		color: lightgray;
+		text-align: center;
+	}
+
+	.ant-form {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 15px 10px;
+		margin-top: 30px;
+
+		fieldset {
+			display: flex !important;
+			justify-content: flex-start !important;
+			flex-wrap: wrap;
+			gap: 15px 10px;
+			margin: 0 !important;
+
+			legend {
+				display: none !important;
+			}
+		}
+
+		.ant-form-item {
+			width: calc(50% - 10px);
+			margin-bottom: 0;
+
+			&:last-of-type {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.ant-dropdown-menu {
+	.ant-btn {
+		border: none;
+		background: none;
+	}
+}

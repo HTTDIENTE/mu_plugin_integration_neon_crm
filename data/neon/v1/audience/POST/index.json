@@ -1,0 +1,7 @@
+{
+  "code": "post_neon_audience",
+  "message": "Successfully subscribed!",
+  "data": {
+    "status": 200
+  }
+}

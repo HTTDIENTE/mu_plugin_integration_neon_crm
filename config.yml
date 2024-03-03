@@ -1,0 +1,15 @@
+proxy: local
+local:
+  host: 127.0.0.1
+  port: 8887
+  errors:
+    #neon/v1/account/GET: error-404.json
+    #neon/v1/account/POST: error.json
+    #neon/v1/account/PUT: error.json
+    #neon/v1/donations/one-time/POST: error.json
+    #neon/v1/event-registrations/POST: error.json
+    #neon/v1/sync/POST: error.json
+wp-local:
+  host: the-merge.local
+wp-development:
+  host: wldtmdev.wpengine.com

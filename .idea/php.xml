@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpCodeSniffer">
+    <phpcs_settings>
+      <PhpCSConfiguration beautifier_path="$PROJECT_DIR$/../../../../../../../../../My Programs/Важно/PHP_CodeSniffer-master/bin/phpcbf" tool_path="$PROJECT_DIR$/../../../../../../../../../My Programs/Важно/PHP_CodeSniffer-master/bin/phpcs" timeout="45000" />
+    </phpcs_settings>
+  </component>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/includes/vendor/composer" />
+      <path value="$PROJECT_DIR$/includes/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/includes/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/includes/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/includes/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/includes/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/includes/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/includes/vendor/ankitpokhrel/tus-php" />
+      <path value="$PROJECT_DIR$/includes/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/includes/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/includes/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/includes/vendor/vimeo/vimeo-api" />
+      <path value="$PROJECT_DIR$/includes/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/includes/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/includes/vendor/predis/predis" />
+      <path value="$PROJECT_DIR$/includes/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/includes/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/includes/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/includes/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/includes/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/includes/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/includes/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/includes/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/includes/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/includes/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/includes/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/includes/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/includes/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/includes/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/includes/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/includes/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/includes/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/includes/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/includes/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/includes/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/includes/vendor/nesbot/carbon" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
+    <option name="suggestChangeDefaultLanguageLevel" value="false" />
+  </component>
+</project>

@@ -1,0 +1,69 @@
+{
+	"name": "wld-the-merge-react",
+	"version": "1.0.0",
+	"scripts": {
+		"start": "wp-scripts start --hot",
+		"watch": "wp-scripts start",
+		"wprun": "wp-scripts start --hot --env writeToDisc",
+		"build": "wp-scripts build",
+		"build-to-wpe": "npm run build && npm run push-to-wpe && npm run wpe-cache-flush",
+		"push-to-wpe": "node scripts/push-to-wpe.js",
+		"wpe-cache-flush": "node scripts/wpe-cache-flush.js",
+		"stats": "webpack --node-env production --analyze",
+		"phpcs:lint": ".\\includes\\vendor\\bin\\phpcs .",
+		"phpcs:fix": ".\\includes\\vendor\\bin\\phpcbf .",
+		"composer": "composer install",
+		"composer:wpe": "node scripts/wpe-composer.js",
+		"composer:no-dev": "composer install --no-dev --optimize-autoloader",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"plugin-build": "npm run composer:no-dev && npm run build && npm run plugin-zip && npm run composer",
+		"packages-update": "wp-scripts packages-update"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^25.1.0",
+		"copy-webpack-plugin": "^11.0.0",
+		"eslint": "8.22.0",
+		"glob": "^8.0.3",
+		"html-webpack-plugin": "^5.5.0",
+		"http-proxy-middleware": "^2.0.6",
+		"remove-accents": "^0.4.4",
+		"ssh2": "^1.11.0",
+		"ssh2-sftp-client": "^9.0.4",
+		"typescript": "^4.9.4",
+		"webpack": "^5.75.0",
+		"webpack-bundle-analyzer": "^4.7.0"
+	},
+	"dependencies": {
+		"@ant-design/cssinjs": "^1.3.2",
+		"@ant-design/icons": "^4.8.0",
+		"@wordpress/api-fetch": "^6.21.0",
+		"@wordpress/dom": "^3.24.0",
+		"@wordpress/element": "^5.1.0",
+		"@wordpress/url": "^3.25.0",
+		"antd": "^5.1.2",
+		"classnames": "^2.3.2",
+		"js-yaml": "^4.1.0",
+		"libphonenumber-js": "^1.10.15",
+		"lodash": "^4.17.21",
+		"moment": "^2.29.4",
+		"postal-codes-js": "^2.5.2",
+		"react-content-loader": "^6.2.0",
+		"react-router-dom": "^6.6.1",
+		"react-slick": "^0.29.0",
+		"slick-carousel": "^1.8.1"
+	},
+	"stylelint": {
+		"extends": [
+			"@wordpress/stylelint-config/scss"
+		]
+	},
+	"eslintConfig": {
+		"extends": [
+			"plugin:@wordpress/eslint-plugin/recommended"
+		]
+	},
+	"browserslist": [
+		"cover 90% in US",
+		"not iOS < 14"
+	]
+}

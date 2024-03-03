@@ -1,0 +1,27 @@
+{
+  "code": "put_neon_recurring_donations",
+  "message": "Success",
+  "data": {
+    "status": 200,
+    "recurringDonations": [
+      {
+        "id": 2050,
+        "amount": 50,
+        "frequency": "week",
+        "nextDate": "2022-11-22T17:32:28Z"
+      },
+      {
+        "id": 2051,
+        "amount": 250,
+        "frequency": "month",
+        "nextDate": "2022-12-21T17:32:28Z"
+      },
+      {
+        "id": 2052,
+        "amount": 100,
+        "frequency": "week",
+        "nextDate": "2022-12-31T17:32:28Z"
+      }
+    ]
+  }
+}

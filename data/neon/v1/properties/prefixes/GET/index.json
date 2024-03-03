@@ -1,0 +1,15 @@
+{
+  "code": "get_neon_properties_prefixes",
+  "message": "Success",
+  "data": {
+    "prefixes": [
+      "Dr.",
+      "Miss",
+      "Mr.",
+      "Mrs.",
+      "Ms.",
+      "Mx."
+    ],
+    "status": 200
+  }
+}

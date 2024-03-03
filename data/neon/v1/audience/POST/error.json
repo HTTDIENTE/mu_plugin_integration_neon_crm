@@ -1,0 +1,17 @@
+{
+  "code": "neon_error",
+  "message": "Error.",
+  "data": {
+    "status": 400,
+    "errors": [
+      {
+        "code": "10012",
+        "message": "Error 1"
+      },
+      {
+        "code": "10012",
+        "message": "Error 2"
+      }
+    ]
+  }
+}

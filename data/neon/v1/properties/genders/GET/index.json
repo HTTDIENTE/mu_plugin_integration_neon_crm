@@ -1,0 +1,19 @@
+{
+  "code": "get_neon_properties_genders",
+  "message": "Success",
+  "data": {
+    "genders": [
+      {
+        "code": "M",
+        "description": "Male",
+        "status": "ACTIVE"
+      },
+      {
+        "code": "F",
+        "name": "Female",
+        "status": "ACTIVE"
+      }
+    ],
+    "status": 200
+  }
+}

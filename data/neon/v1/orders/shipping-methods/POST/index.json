@@ -1,0 +1,19 @@
+{
+  "code": "post_neon_orders_shipping-methods",
+  "message": "Success",
+  "data": {
+    "status": 200,
+    "shippingMethods": [
+      {
+      "id": "123",
+      "name": "Shipping Method 1",
+      "fee": 10
+      },
+      {
+        "id": "124",
+        "name": "Shipping Method 2",
+        "fee": 20
+      }
+    ]
+  }
+}

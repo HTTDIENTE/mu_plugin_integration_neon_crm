@@ -1,0 +1,163 @@
+.event {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 40px;
+	background: #fff;
+	border-radius: 2px;
+	box-shadow: 0 2px 7px rgb(0 0 0 / 10%);
+
+	&__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 40px;
+		padding: 20px 0;
+		margin-bottom: 20px;
+	}
+
+	&__left {
+		width: calc(78% - 40px);
+	}
+
+	&__right {
+		width: calc(22% - 40px);
+		display: flex;
+		flex-wrap: wrap;
+		background: #9dbed0;
+		padding: 20px 10px 10px;
+		text-align: center;
+	}
+
+	&__title {
+		font-size: 37px;
+		color: #688bae;
+		margin: 0;
+	}
+
+	&__day {
+		width: 100%;
+		font-size: 40px;
+		font-weight: 700;
+		margin: 0;
+	}
+
+	&__month {
+		width: 100%;
+		font-size: 25px;
+		line-height: 20px;
+		text-transform: uppercase;
+		margin: 0 0 10px;
+	}
+
+	&__time {
+		width: 100%;
+		font-size: 12px;
+		margin: auto 0 0 0;
+
+		.anticon {
+			margin-right: 5px;
+		}
+	}
+
+	&__content {
+		line-height: 22px;
+		margin-bottom: 20px;
+	}
+
+	&__description {
+		width: 100%;
+	}
+
+	&__summary {
+		margin: 0 0 20px;
+	}
+
+	&__message {
+		color: #688bae;
+		margin: 0;
+
+		.anticon {
+			margin-right: 5px;
+		}
+	}
+
+	&__form-title {
+		margin: 0;
+	}
+
+	&__registration {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.select-address-dropdown {
+		width: 100%;
+	}
+
+	.ant-form {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 15px 10px;
+
+		fieldset {
+			display: flex !important;
+			justify-content: flex-start !important;
+			flex-wrap: wrap;
+			gap: 15px 10px;
+			margin: 0 !important;
+
+			legend {
+				display: none !important;
+			}
+		}
+
+		.ant-form-item {
+			width: calc(50% - 10px);
+			margin-bottom: 0;
+
+			&:last-of-type {
+				width: 100%;
+			}
+		}
+	}
+
+	.form-footer {
+		width: 100%;
+		min-height: 85px;
+		background: rgba(157, 190, 208, 0.75);
+		box-shadow: 0 2px 7px rgb(0 0 0 / 10%);
+		padding: 20px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		&__row {
+			display: flex;
+			gap: 10px;
+			line-height: 20px;
+			text-transform: uppercase;
+
+			&:not(:last-of-type) {
+				margin: 0 0 10px;
+			}
+		}
+
+		&__title {
+			min-width: 100px;
+			margin: 0;
+		}
+
+		&__value {
+			font-weight: 500;
+			margin: 0;
+		}
+
+		.ant-form-item {
+			margin-bottom: 4px;
+
+			.ant-form-item-label > label {
+				text-transform: uppercase;
+			}
+		}
+	}
+}

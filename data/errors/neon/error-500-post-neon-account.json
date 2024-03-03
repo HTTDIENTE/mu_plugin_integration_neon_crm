@@ -1,0 +1,17 @@
+{
+  "code": "post_neon_account",
+	"message": "Please correct the errors below.",
+	"data": {
+		"status": 500,
+		"fields": [
+			{
+				"key": "first_name",
+				"message": "Only letters"
+			},
+			{
+				"key": "email",
+				"message": "This email is already taken"
+			}
+		]
+	}
+}

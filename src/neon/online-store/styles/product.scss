@@ -1,0 +1,65 @@
+.product {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	gap: 50px;
+
+	&__images {
+		width: calc(50% - 25px);
+		display: grid;
+		grid-template-columns: 0.5fr 1.6fr;
+		grid-auto-flow: dense;
+		gap: 10px 20px;
+
+		.ant-image {
+			&:first-of-type {
+				width: 100%;
+				grid-row: 1/ 4;
+				grid-column-start: 2;
+				aspect-ratio: 1/1;
+			}
+		}
+	}
+
+	&__content {
+		width: calc(50% - 25px);
+		color: whitesmoke;
+	}
+
+	&__price {
+		font-weight: 600;
+		font-size: 25px;
+	}
+
+	.ant-row {
+		align-items: center;
+		gap: 10px;
+		margin-bottom: 20px;
+
+		.ant-input-number-input {
+			text-align: center;
+		}
+	}
+
+	&__back-btn {
+		display: inline-block;
+		padding: 10px 15px;
+		color: #383838;
+		background: #fff;
+		border: none;
+		text-transform: uppercase;
+		margin-left: 10px;
+		cursor: pointer;
+		transition: 0.3s;
+
+		&:hover {
+			color: #93a1a1;
+			background: #383838;
+		}
+	}
+
+	.ant-image .ant-image-img {
+		aspect-ratio: 1/1;
+		object-fit: cover;
+	}
+}

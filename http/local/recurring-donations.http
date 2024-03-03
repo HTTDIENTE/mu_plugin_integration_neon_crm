@@ -1,0 +1,2 @@
+### Delete recurring donation
+DELETE http://127.0.0.1:8887/neon/v1/recurring-donations/1050/

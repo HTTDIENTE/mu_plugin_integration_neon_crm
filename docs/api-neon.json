@@ -1,0 +1,3082 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "The Merge",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8887/neon/v1"
+    },
+    {
+      "url": "https://the-merge.local/wp-json/neon/v1"
+    },
+    {
+      "url": "https://wldtmdev.wpengine.com/wp-json/neon/v1"
+    }
+  ],
+  "paths": {
+    "/auth": {
+      "post": {
+        "description": "Authorizes the user",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/PostAuth"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SuccessAuth"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/Unexpected"
+          }
+        },
+        "tags": [
+          "Auth"
+        ]
+      },
+      "delete": {
+        "description": "Unauthorized the user",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SuccessUnAuth"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/Unexpected"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "tags": [
+          "Auth"
+        ]
+      }
+    },
+    "/sync": {
+      "post": {
+        "description": "Data synchronization",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dates"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SuccessSync"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/Unexpected"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "tags": [
+          "Sync"
+        ]
+      }
+    },
+    "/account": {
+      "post": {
+        "description": "Create account information",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/PostAccount"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SuccessAccount"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/Unexpected"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "tags": [
+          "Account"
+        ]
+      },
+      "path": {
+        "description": "Update account information",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountFull"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SuccessAccount"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/Unexpected"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "tags": [
+          "Account"
+        ]
+      }
+    },
+    "/account/password": {
+      "path": {
+        "description": "Update account information",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "properties": {
+                      "password": {
+                        "type": "string",
+                        "example": "test_123"
+                      },
+                      "confirm-password": {
+                        "type": "string",
+                        "example": "test_123"
+                      },
+                      "username": {
+                        "type": "string",
+                        "example": "jaclyn.reilly"
+                      },
+                      "firstName": {
+                        "type": "string",
+                        "example": "Jaclyn"
+                      },
+                      "lastName": {
+                        "type": "string",
+                        "example": "Reilly"
+                      },
+                      "contactId": {
+                        "type": "string",
+                        "example": "123"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SuccessAccountPassword"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/Unexpected"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "tags": [
+          "Account"
+        ]
+      }
+    },
+    "/account/recurring-donations": {
+      "path": {
+        "description": "Update account recurring donation",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "example": "123"
+                      },
+                      "recurringPeriod": {
+                        "type": "number",
+                        "example": 0
+                      },
+                      "recurringPeriodType": {
+                        "type": "string",
+                        "example": "WEEK"
+                      },
+                      "amount": {
+                        "type": "number",
+                        "example": "250"
+                      },
+                      "nextDate": {
+                        "type": "string",
+                        "example": "2022-12-28T16:10:37.373Z"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SuccessUpdateRecurringDonations"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/Unexpected"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "tags": [
+          "Account"
+        ]
+      }
+    },
+    "/account/recurring-donations/payment": {
+      "path": {
+        "description": "Update payment information recurring donation",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "example": "123"
+                      },
+                      "recurringPeriod": {
+                        "type": "number",
+                        "example": 0
+                      },
+                      "recurringPeriodType": {
+                        "type": "string",
+                        "example": "WEEK"
+                      },
+                      "amount": {
+                        "type": "number",
+                        "example": "250"
+                      },
+                      "nextDate": {
+                        "type": "string",
+                        "example": "2022-12-28T16:10:37.373Z"
+                      },
+                      "creditCardOnline": {
+                        "$ref": "#/components/schemas/CreditCardOnline"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SuccessUpdateRecurringDonationsPayment"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/Unexpected"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "tags": [
+          "Account"
+        ]
+      }
+    },
+    "/account/recurring-donations/{id}": {
+      "delete": {
+        "description": "Cancel account recurring donation",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/RecurringDonationId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SuccessDeleteRecurringDonations"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/Unexpected"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "tags": [
+          "Account"
+        ]
+      }
+    },
+    "/account/check/username": {
+      "post": {
+        "description": "Update account information",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "properties": {
+                      "username": {
+                        "type": "string",
+                        "example": "jaclyn.reilly"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SuccessCheckUsername"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/Unexpected"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "tags": [
+          "Account"
+        ]
+      }
+    },
+    "/account/check/email": {
+      "post": {
+        "description": "Update account information",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "properties": {
+                      "email": {
+                        "type": "string",
+                        "example": "jake.reilly@email.com"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SuccessCheckUsername"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/Unexpected"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "tags": [
+          "Account"
+        ]
+      }
+    },
+    "/orders": {
+      "post": {
+        "description": "Creates a new order",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/PostOrders"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SuccessOrders"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/Unexpected"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "tags": [
+          "Orders"
+        ]
+      }
+    },
+    "/orders/shipping-methods": {
+      "post": {
+        "description": "Get a list of shipping methods",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/PostShippingMethods"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SuccessShippingMethods"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/Unexpected"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "tags": [
+          "Orders"
+        ]
+      }
+    },
+    "/orders/calculate": {
+      "post": {
+        "description": "Calculate the total cost of the order",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/PostOrdersCalculate"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SuccessOrdersCalculate"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/Unexpected"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "tags": [
+          "Orders"
+        ]
+      }
+    },
+    "/donations/one-time": {
+      "post": {
+        "description": "Creates a new donation",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "properties": {
+                      "date": {
+                        "type": "string",
+                        "example": "2022-12-28T16:10:37.373Z"
+                      },
+                      "amount": {
+                        "type": "number",
+                        "example": "250"
+                      },
+                      "payments" : {
+                        "type": "array",
+                        "items":{
+                          "type": "object",
+                          "properties": {
+                            "amount": {
+                              "type": "number",
+                              "example": "250"
+                            },
+                            "tenderType": {
+                              "type": "number",
+                              "example": 0
+                            },
+                            "receivedDate": {
+                              "type": "string",
+                              "example": "2022-12-28T16:10:37.373Z"
+                            },
+                            "creditCardOnline": {
+                              "$ref": "#/components/schemas/CreditCardOnline"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful creating Donation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Response"
+                    },
+                    {
+                      "properties": {
+                        "code": {
+                          "example": "post_neon_donations_create"
+                        },
+                        "message": {
+                          "example": "Success"
+                        },
+                        "data": {
+                          "properties": {
+                            "status": {
+                              "example": 200
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/Unexpected"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "tags": [
+          "Donations"
+        ]
+      }
+    },
+    "/donations/recurring": {
+      "post": {
+        "description": "Creates a new donation",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "properties": {
+                      "recurringPeriod": {
+                        "type": "number",
+                        "example": 0
+                      },
+                      "recurringPeriodType": {
+                        "type": "string",
+                        "example": "WEEk"
+                      },
+                      "amount": {
+                        "type": "number",
+                        "example": "250"
+                      },
+                      "nextDate": {
+                        "type": "string",
+                        "example": "2022-12-28T16:10:37.373Z"
+                      },
+                      "creditCardOnline": {
+                        "$ref": "#/components/schemas/CreditCardOnline"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SuccessDonations"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/Unexpected"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "tags": [
+          "Donations"
+        ]
+      }
+    },
+    "/event-registrations": {
+      "post": {
+        "description": "Creates a new event",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/PostEventRegistration"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SuccessOrders"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/Unexpected"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "tags": [
+          "Events"
+        ]
+      }
+    },
+    "/audience": {
+      "post": {
+        "description": "Audience newslatter data",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewsLatter"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SuccessNewslatter"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/Unexpected"
+          }
+        },
+        "tags": [
+          "Audience"
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AccountFull": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "primaryContact": {
+                "type": "object",
+                "properties": {
+                  "addresses": {
+                    "type": "array",
+                    "items": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/AddressId"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Account"
+          }
+        ]
+      },
+      "Auth": {
+        "type": "object",
+        "properties": {
+          "authorizationCode": {
+            "type": "string",
+            "example": "ZGVtbzpwQDU1dzByZA=="
+          }
+        },
+        "required": [
+          "code"
+        ]
+      },
+      "Account": {
+        "type": "object",
+        "properties": {
+          "login": {
+            "type": "object",
+            "properties": {
+              "username": {
+                "type": "string",
+                "example": "jaclyn.reilly"
+              }
+            },
+            "required": [
+              "username"
+            ]
+          },
+          "primaryContact": {
+            "$ref": "#/components/schemas/PrimaryContact"
+          }
+        },
+        "required": [
+          "login",
+          "primaryContact"
+        ]
+      },
+      "AccountPassword": {
+        "type": "object",
+        "properties": {
+          "login": {
+            "type": "object",
+            "properties": {
+              "password": {
+                "type": "string",
+                "example": "123ABC321",
+                "format": "password",
+                "description": "Requires at least 8 characters, including at least one number. Spaces are not allowed."
+              }
+            },
+            "required": [
+              "password"
+            ]
+          }
+        },
+        "required": [
+          "login"
+        ]
+      },
+      "AccountOrders": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountOrder"
+        }
+      },
+      "AccountOrder": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "123"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountOrderItem"
+            }
+          },
+          "orderDate": {
+            "type": "string",
+            "example": "123"
+          },
+          "totalCharge": {
+            "type": "number",
+            "format": "double",
+            "example": 123.22
+          },
+          "subTotal": {
+            "type": "number",
+            "format": "double",
+            "example": 123.22
+          },
+          "tax": {
+            "type": "number",
+            "format": "double",
+            "example": 123.22
+          },
+          "totalDiscount": {
+            "type": "number",
+            "format": "double",
+            "example": 123.22
+          },
+          "shippingHandlingFee": {
+            "type": "number",
+            "format": "double",
+            "example": 123.22
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Pending",
+              "Processing",
+              "Succeeded",
+              "Failed",
+              "Error",
+              "Scheduled",
+              "Canceled",
+              "Deferred",
+              "Refunded",
+              "Partially_Refunded",
+              "Dispute_Lost",
+              "Held_for_Review"
+            ],
+            "example": "Succeeded"
+          },
+          "timestamps": {
+            "type": "object",
+            "properties": {
+              "createdDateTime": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "createdDateTime"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "items",
+          "orderDate",
+          "totalCharge",
+          "subTotal",
+          "tax",
+          "totalDiscount",
+          "shippingHandlingFee",
+          "status",
+          "timestamps"
+        ]
+      },
+      "AccountOrderItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "123"
+          },
+          "name": {
+            "type": "string",
+            "example": "123"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "DONATION",
+              "MEMBERSHIP",
+              "EVENT_REGISTRATION",
+              "PRODUCT"
+            ],
+            "example": "DONATION"
+          },
+          "unitPrice": {
+            "type": "number",
+            "format": "double",
+            "example": 14.76
+          },
+          "quantity": {
+            "type": "number",
+            "format": "int32",
+            "example": 3
+          },
+          "price": {
+            "type": "number",
+            "format": "double",
+            "example": 14.76
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "type",
+          "unitPrice",
+          "quantity",
+          "price"
+        ]
+      },
+      "PrimaryContact": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "example": "Jaclyn"
+          },
+          "middleName": {
+            "type": "string",
+            "example": ""
+          },
+          "lastName": {
+            "type": "string",
+            "example": "Reilly"
+          },
+          "prefix": {
+            "$ref": "#/components/schemas/NamePrefix"
+          },
+          "suffix": {
+            "type": "string",
+            "example": ""
+          },
+          "salutation": {
+            "type": "string",
+            "example": ""
+          },
+          "dob": {
+            "type": "object",
+            "properties": {
+              "day": {
+                "type": "string",
+                "example": "16",
+                "enum": [
+                  "01",
+                  "02",
+                  "03",
+                  "04",
+                  "05",
+                  "06",
+                  "07",
+                  "08",
+                  "09",
+                  "10",
+                  "11",
+                  "12",
+                  "13",
+                  "14",
+                  "15",
+                  "16",
+                  "17",
+                  "18",
+                  "19",
+                  "20",
+                  "21",
+                  "22",
+                  "23",
+                  "24",
+                  "25",
+                  "26",
+                  "27",
+                  "28",
+                  "29",
+                  "30",
+                  "31"
+                ]
+              },
+              "month": {
+                "type": "string",
+                "example": "02",
+                "enum": [
+                  "01",
+                  "02",
+                  "03",
+                  "04",
+                  "05",
+                  "06",
+                  "07",
+                  "08",
+                  "09",
+                  "10",
+                  "11",
+                  "12"
+                ]
+              },
+              "year": {
+                "type": "string",
+                "example": "1979",
+                "minLength": 4,
+                "maxLength": 4
+              }
+            },
+            "required": [
+              "day",
+              "month",
+              "year"
+            ]
+          },
+          "gender": {
+            "$ref": "#/components/schemas/Gender"
+          },
+          "email1": {
+            "type": "string",
+            "example": "jaclyn.reilly@email.com",
+            "format": "email"
+          },
+          "contactId": {
+            "type": "string",
+            "example": "123"
+          },
+          "addresses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Address"
+            }
+          }
+        },
+        "required": [
+          "firstName",
+          "lastName",
+          "dob",
+          "gender",
+          "email1",
+          "addresses"
+        ]
+      },
+      "Address": {
+        "type": "object",
+        "properties": {
+          "isPrimaryAddress": {
+            "type": "boolean",
+            "example": true
+          },
+          "addressLine1": {
+            "type": "string",
+            "example": "7574 Dulce Manors"
+          },
+          "addressLine2": {
+            "type": "string",
+            "example": ""
+          },
+          "city": {
+            "type": "string",
+            "example": "Port Mitzieberg"
+          },
+          "stateProvince": {
+            "$ref": "#/components/schemas/StateProvince"
+          },
+          "country": {
+            "$ref": "#/components/schemas/Country"
+          },
+          "zipCode": {
+            "type": "string",
+            "example": "51917-7351"
+          },
+          "phone1": {
+            "type": "string",
+            "example": "+1 469 444 1896"
+          }
+        },
+        "required": [
+          "addressId",
+          "isPrimaryAddress",
+          "addressLine1",
+          "city",
+          "stateProvince",
+          "country",
+          "zipCode",
+          "phone1"
+        ]
+      },
+      "AddressId": {
+        "type": "object",
+        "properties": {
+          "addressId": {
+            "type": "string",
+            "example": "894562"
+          }
+        },
+        "required": [
+          "addressId"
+        ]
+      },
+      "Response": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "integer",
+                "minimum": 200,
+                "maximum": 500
+              }
+            }
+          }
+        }
+      },
+      "Country": {
+        "description": "See account/properties/countries/",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "1",
+            "enum": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25",
+              "26",
+              "27",
+              "28",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "35",
+              "36",
+              "37",
+              "38",
+              "39",
+              "40",
+              "41",
+              "42",
+              "43",
+              "44",
+              "45",
+              "46",
+              "47",
+              "48",
+              "49",
+              "50",
+              "51",
+              "52",
+              "53",
+              "54",
+              "55",
+              "56",
+              "57",
+              "58",
+              "59",
+              "60",
+              "61",
+              "62",
+              "63",
+              "64",
+              "65",
+              "66",
+              "67",
+              "68",
+              "69",
+              "70",
+              "71",
+              "72",
+              "73",
+              "74",
+              "75",
+              "76",
+              "77",
+              "78",
+              "79",
+              "80",
+              "81",
+              "82",
+              "83",
+              "84",
+              "85",
+              "86",
+              "87",
+              "88",
+              "89",
+              "90",
+              "91",
+              "92",
+              "93",
+              "94",
+              "95",
+              "96",
+              "97",
+              "98",
+              "99",
+              "100",
+              "101",
+              "102",
+              "103",
+              "104",
+              "105",
+              "106",
+              "107",
+              "108",
+              "109",
+              "110",
+              "111",
+              "112",
+              "113",
+              "114",
+              "115",
+              "116",
+              "117",
+              "118",
+              "119",
+              "120",
+              "121",
+              "122",
+              "123",
+              "124",
+              "125",
+              "126",
+              "127",
+              "128",
+              "129",
+              "130",
+              "131",
+              "132",
+              "133",
+              "134",
+              "135",
+              "136",
+              "137",
+              "138",
+              "139",
+              "140",
+              "141",
+              "142",
+              "143",
+              "144",
+              "145",
+              "146",
+              "147",
+              "148",
+              "149",
+              "150",
+              "151",
+              "152",
+              "153",
+              "154",
+              "155",
+              "156",
+              "157",
+              "158",
+              "159",
+              "160",
+              "161",
+              "162",
+              "163",
+              "164",
+              "165",
+              "166",
+              "167",
+              "168",
+              "169",
+              "170",
+              "171",
+              "172",
+              "173",
+              "174",
+              "175",
+              "176",
+              "177",
+              "178",
+              "179",
+              "180",
+              "181",
+              "182",
+              "183",
+              "184",
+              "185",
+              "186",
+              "187",
+              "188",
+              "189",
+              "190",
+              "191",
+              "192",
+              "193",
+              "194",
+              "195",
+              "196",
+              "197",
+              "198",
+              "199",
+              "200",
+              "201",
+              "202",
+              "203",
+              "204",
+              "205",
+              "206",
+              "207",
+              "208",
+              "209",
+              "210",
+              "211",
+              "212",
+              "213",
+              "214",
+              "215",
+              "216",
+              "217",
+              "218",
+              "219",
+              "220",
+              "221",
+              "222",
+              "223",
+              "224",
+              "225",
+              "226",
+              "227",
+              "228",
+              "229",
+              "230",
+              "231",
+              "232",
+              "233",
+              "234",
+              "235",
+              "236",
+              "237",
+              "238",
+              "239",
+              "240",
+              "241",
+              "242",
+              "243",
+              "244",
+              "245",
+              "246",
+              "247",
+              "248",
+              "249",
+              "250",
+              "251",
+              "252",
+              "253",
+              "254",
+              "255"
+            ]
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "StateProvince": {
+        "description": "See account/properties/state-provinces/",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "example": "WA",
+            "enum": [
+              "AL",
+              "AK",
+              "AZ",
+              "AR",
+              "CA",
+              "CO",
+              "CT",
+              "DE",
+              "DC",
+              "FL",
+              "GA",
+              "HI",
+              "ID",
+              "IL",
+              "IN",
+              "IA",
+              "KS",
+              "KY",
+              "LA",
+              "ME",
+              "MD",
+              "MA",
+              "MI",
+              "MN",
+              "MS",
+              "MO",
+              "MT",
+              "NE",
+              "NV",
+              "NH",
+              "NJ",
+              "NM",
+              "NY",
+              "NC",
+              "ND",
+              "OH",
+              "OK",
+              "OR",
+              "PA",
+              "RI",
+              "SC",
+              "SD",
+              "TN",
+              "TX",
+              "UT",
+              "VT",
+              "VA",
+              "WA",
+              "WV",
+              "WI",
+              "WY",
+              "AS",
+              "FM",
+              "GU",
+              "MH",
+              "MP",
+              "PW",
+              "PR",
+              "UM",
+              "VI",
+              "AA",
+              "AE",
+              "AP",
+              "AB",
+              "BC",
+              "MB",
+              "NB",
+              "NL",
+              "NS",
+              "NT",
+              "NU",
+              "ON",
+              "PE",
+              "QC",
+              "SK",
+              "YT"
+            ]
+          }
+        },
+        "required": [
+          "code"
+        ]
+      },
+      "Gender": {
+        "description": "See account/properties/genders/",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "example": "F",
+            "enum": [
+              "M",
+              "F"
+            ]
+          }
+        },
+        "required": [
+          "code"
+        ]
+      },
+      "NamePrefix": {
+        "description": "See account/properties/prefixes/",
+        "type": "string",
+        "example": "",
+        "enum": [
+          "Dr.",
+          "Miss",
+          "Mr.",
+          "Mrs.",
+          "Ms.",
+          "Mx."
+        ]
+      },
+      "Products": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Product"
+        }
+      },
+      "Product": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "format": "int32",
+            "example": 272
+          },
+          "categoryId": {
+            "type": "number",
+            "format": "int32",
+            "example": 2
+          },
+          "categoryTitle": {
+            "type": "string",
+            "example": "Books"
+          },
+          "title": {
+            "type": "string",
+            "example": "Sunday 05-24-2020 9am Service"
+          },
+          "code": {
+            "type": "string",
+            "example": "z1027E0302"
+          },
+          "description": {
+            "type": "string",
+            "example": "<p>lorem ipsum</p>"
+          },
+          "price": {
+            "type": "number",
+            "format": "double",
+            "example": 11.50
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "example": "https://app.neoncrm.com/neon/resource/agapelivesandbox/images/product/272/0.jpg"
+                },
+                "alt": {
+                  "type": "string",
+                  "example": ""
+                }
+              },
+              "required": [
+                "url",
+                "alt"
+              ]
+            }
+          }
+        },
+        "required": [
+          "id",
+          "categoryId",
+          "title",
+          "code",
+          "description",
+          "price",
+          "images"
+        ]
+      },
+      "RecurringDonations": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/RecurringDonation"
+        }
+      },
+      "RecurringDonation": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "format": "int32",
+            "example": 1072
+          },
+          "amount": {
+            "type": "number",
+            "format": "int32",
+            "example": 50.00
+          },
+          "frequency": {
+            "type": "string",
+            "example": "week"
+          },
+          "nextDate": {
+            "type": "string",
+            "example": "2022-11-22T17:32:28Z"
+          }
+        },
+        "required": [
+          "id",
+          "amount",
+          "frequency",
+          "nextDate"
+        ]
+      },
+      "Events": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Event"
+        }
+      },
+      "Event": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "format": "int32",
+            "example": 123
+          },
+          "neonEventId": {
+            "type": "number",
+            "format": "int32",
+            "example": 321
+          },
+          "title": {
+            "type": "string",
+            "example": "lorem ipsum"
+          },
+          "summary": {
+            "type": "string",
+            "example": "lorem ipsum"
+          },
+          "description": {
+            "type": "string",
+            "example": "<p>lorem ipsum</p>"
+          },
+          "startDatetimeGMT": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2017-07-21T17:32:28Z"
+          },
+          "endDatetimeGMT": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2017-07-21T17:32:28Z"
+          },
+          "registrationOpenDatetimeGMT": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2017-07-21T17:32:28Z"
+          },
+          "registrationCloseDatetimeGMT": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2017-07-21T17:32:28Z"
+          },
+          "categoryId": {
+            "type": "number",
+            "format": "int32",
+            "example": 1
+          },
+          "categoryTitle": {
+            "type": "string",
+            "example": "Online Seminar"
+          },
+          "fees": {
+            "type": "number",
+            "example": 12
+          },
+          "needRegister": {
+            "type": "boolean",
+            "example": true
+          },
+          "needPayment": {
+            "type": "boolean",
+            "example": false
+          }
+        },
+        "required": [
+          "id",
+          "neonEventId",
+          "title",
+          "summary",
+          "description",
+          "startDatetimeGMT",
+          "endDatetimeGMT",
+          "registrationOpenDatetimeGMT",
+          "registrationCloseDatetimeGMT",
+          "categoryId",
+          "categoryTitle"
+        ]
+      },
+      "LivestreamVideos": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/LivestreamVideo"
+        }
+      },
+      "Lives": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Live"
+        }
+      },
+      "Live": {
+        "type": "object",
+        "properties": {
+          "eventId": {
+            "type": "number",
+            "format": "int32",
+            "example": 321
+          },
+          "title": {
+            "type": "string",
+            "example": "lorem ipsum"
+          },
+          "thumbnailUrl": {
+            "type": "string",
+            "example": "https://img.new.livestream.com/events/00000000007a0f6d/c3ad04c2-6890-41f5-b978-81d5d2f540f7_570.jpg"
+          },
+          "url": {
+            "type": "string",
+            "example": "https://livestream.com/accounts/2886546/events/10083234/videos/234292596/player?width=936&amp;height=527&amp;enableInfo=true&amp;defaultDrawer=feed&amp;autoPlay=true&amp;mute=false"
+          },
+          "publishDatetimeGMT": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2017-07-21T17:32:28Z"
+          }
+        },
+        "required": [
+          "eventId",
+          "title",
+          "thumbnailUrl",
+          "publishDatetimeGMT"
+        ]
+      },
+      "LivestreamVideo": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "format": "int32",
+            "example": 123
+          },
+          "eventId": {
+            "type": "number",
+            "format": "int32",
+            "example": 321
+          },
+          "title": {
+            "type": "string",
+            "example": "lorem ipsum"
+          },
+          "thumbnailUrl": {
+            "type": "string",
+            "example": "https://img.new.livestream.com/events/00000000007a0f6d/c3ad04c2-6890-41f5-b978-81d5d2f540f7_570.jpg"
+          },
+          "url": {
+            "type": "string",
+            "example": "https://livestream.com/accounts/2886546/events/10083234/videos/234292596/player?width=936&amp;height=527&amp;enableInfo=true&amp;defaultDrawer=feed&amp;autoPlay=true&amp;mute=false"
+          },
+          "publishDatetimeGMT": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2017-07-21T17:32:28Z"
+          }
+        },
+        "required": [
+          "id",
+          "eventId",
+          "title",
+          "thumbnailUrl",
+          "publishDatetimeGMT"
+        ]
+      },
+      "Dates": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2017-07-21T17:32:28Z"
+          },
+          "orders": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2017-07-21T17:32:28Z"
+          },
+          "products": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2017-07-21T17:32:28Z"
+          },
+          "recurringDonations": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2017-07-21T17:32:28Z"
+          },
+          "events": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2017-07-21T17:32:28Z"
+          },
+          "livestream": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2017-07-21T17:32:28Z"
+          }
+        }
+      },
+      "CreditCardOnline": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "example": "string"
+          },
+          "cardHolderEmail": {
+            "type": "string",
+            "example": "jaclyn.reilly@email.com"
+          },
+          "billingAddress": {
+            "type": "object",
+            "properties": {
+              "addressLine1": {
+                "type": "string",
+                "example": "7574 Dulce Manors"
+              },
+              "addressLine2": {
+                "type": "string",
+                "example": "1234 Manors Dulce"
+              },
+              "city": {
+                "type": "string",
+                "example": "Port Mitzieberg"
+              },
+              "stateProvinceCode": {
+                "type": "string",
+                "example": "WA"
+              },
+              "countryId": {
+                "type": "string",
+                "example": "1"
+              },
+              "zipCode": {
+                "type": "string",
+                "example": "51917-7351"
+              }
+            }
+          }
+        }
+      },
+      "NewsLatter": {
+        "type": "object",
+        "properties": {
+          "subscription": {
+            "type": "string",
+            "example": "3"
+          },
+          "subscriber.email1": {
+            "type": "string",
+            "example": "neoncrm@gmail.com"
+          }
+        }
+      }
+    },
+    "parameters": {
+      "RecurringDonationId": {
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "requestBodies": {
+      "PostAuth": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Auth"
+                },
+                {
+                  "properties": {
+                    "authorizationCode": {
+                      "example": "2312312312",
+                      "description": "This is a temporary code received from NEON from the redirect URL"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "PostAccount": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Account"
+                },
+                {
+                  "$ref": "#/components/schemas/AccountPassword"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "PostShippingMethods": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "properties": {
+                    "countryId": {
+                      "type": "string",
+                      "example": "1"
+                    },
+                    "zipCode": {
+                      "type": "string",
+                      "example": "51917-7351"
+                    },
+                    "products" : {
+                      "type": "array",
+                      "items":{
+                        "type": "object",
+                        "properties": {
+                          "productId": {
+                            "type": "number",
+                            "example": 276
+                          },
+                          "quantity": {
+                            "type": "string",
+                            "example": "5"
+                          },
+                          "unitPrice": {
+                            "type": "number",
+                            "format": "double",
+                            "example": 21.50
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "PostOrders": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "properties": {
+                    "checkoutData": {
+                      "type": "object",
+                      "properties": {
+                        "orderDate": {
+                          "type": "string",
+                          "example": "2022-12-28T16:10:37.373Z"
+                        },
+                        "products": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "productId": {
+                                "type": "number",
+                                "example": 276
+                              },
+                              "quantity": {
+                                "type": "string",
+                                "example": "5"
+                              },
+                              "unitPrice": {
+                                "type": "number",
+                                "format": "double",
+                                "example": 21.50
+                              }
+                            }
+                          }
+                        },
+                        "shipping": {
+                          "type": "object",
+                          "properties": {
+                            "shippingMethodName": {
+                              "type": "string",
+                              "example": "Shipping Method 2"
+                            },
+                            "shippingDeliverTo": {
+                              "type": "string",
+                              "example": "Jake Reilly"
+                            },
+                            "zipCode": {
+                              "type": "string",
+                              "example": "51917-7351"
+                            },
+                            "addressLine1": {
+                              "type": "string",
+                              "example": "7574 Dulce Manors"
+                            }
+                          }
+                        },
+                        "payments": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "tenderType": {
+                                "type": "number",
+                                "example": 4
+                              },
+                              "receivedDate": {
+                                "type": "string",
+                                "example": "2022-12-28T16:10:37.373Z"
+                              },
+                              "creditCardOnline": {
+                                "type": "object",
+                                "properties": {
+                                  "token": {
+                                    "type": "string",
+                                    "example": "string"
+                                  },
+                                  "billingAddress": {
+                                    "type": "object",
+                                    "properties": {
+                                      "addressLine1": {
+                                        "type": "string",
+                                        "example": "7574 Dulce Manors"
+                                      },
+                                      "addressLine2": {
+                                        "type": "string",
+                                        "example": "7574 Dulce Manors"
+                                      },
+                                      "city": {
+                                        "type": "string",
+                                        "example": "Port Mitzieberg"
+                                      },
+                                      "stateProvinceCode": {
+                                        "type": "string",
+                                        "example": "WA"
+                                      },
+                                      "countryId": {
+                                        "type": "string",
+                                        "example": "1"
+                                      },
+                                      "zipCode": {
+                                        "type": "string",
+                                        "example": "51917-7351"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "PostOrdersCalculate": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "properties": {
+                    "orderDate": {
+                      "type": "string",
+                      "example": "2023-01-26"
+                    },
+                    "products" : {
+                      "type": "array",
+                      "items":{
+                        "type": "object",
+                        "properties": {
+                          "productId": {
+                            "type": "number",
+                            "example": 276
+                          },
+                          "quantity": {
+                            "type": "string",
+                            "example": "5"
+                          },
+                          "unitPrice": {
+                            "type": "number",
+                            "format": "double",
+                            "example": 21.50
+                          }
+                        }
+                      }
+                    },
+                    "needShipping": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "shippingHandlingFee": {
+                      "type": "number",
+                      "example": 20
+                    },
+                    "shipping": {
+                      "type": "object",
+                      "properties": {
+                        "shippingMethodName": {
+                          "type": "string",
+                          "example": "Shipping Method 2"
+                        },
+                        "shippingDeliverTo": {
+                          "type": "string",
+                          "example": "Jake Reilly"
+                        },
+                        "city": {
+                          "type": "string",
+                          "example": "Port Mitzieberg"
+                        },
+                        "stateProvince": {
+                          "type": "object",
+                          "properties": {
+                            "code": {
+                              "type": "string",
+                              "example": "WA"
+                            }
+                          }
+                        },
+                        "country": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string",
+                              "example": "1"
+                            }
+                          }
+                        },
+                        "zipCode": {
+                          "type": "string",
+                          "example": "51917-7351"
+                        },
+                        "addressLine1": {
+                          "type": "string",
+                          "example": "7574 Dulce Manors"
+                        },
+                        "addressLine2": {
+                          "type": "string",
+                          "example": "7574 Dulce Manors"
+                        },
+                        "phone": {
+                          "type": "string",
+                          "example": "+1 469 444 1896"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "PostEventRegistration": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "properties": {
+                    "payments" : {
+                      "type": "array",
+                      "items":{
+                        "type": "object",
+                        "properties": {
+                          "tenderType": {
+                            "type": "number",
+                            "example": 4
+                          },
+                          "receivedDate": {
+                            "type": "string",
+                            "example": "2022-12-28T16:10:37.373Z"
+                          },
+                          "creditCardOnline": {
+                            "type": "object",
+                            "properties": {
+                              "token": {
+                                "type": "string",
+                                "example": "string"
+                              },
+                              "cardHolderEmail": {
+                                "type": "string",
+                                "example": "jaclyn.reilly@email.com"
+                              },
+                              "billingAddress": {
+                                "type": "object",
+                                "properties": {
+                                  "addressLine1": {
+                                    "type": "string",
+                                    "example": "7574 Dulce Manors"
+                                  },
+                                  "addressLine2": {
+                                    "type": "string",
+                                    "example": "1234 Manors Dulce"
+                                  },
+                                  "city": {
+                                    "type": "string",
+                                    "example": "Port Mitzieberg"
+                                  },
+                                  "stateProvinceCode": {
+                                    "type": "string",
+                                    "example": "WA"
+                                  },
+                                  "countryId": {
+                                    "type": "string",
+                                    "example": "1"
+                                  },
+                                  "zipCode": {
+                                    "type": "string",
+                                    "example": "51917-7351"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "eventId": {
+                      "type": "string",
+                      "example": "123"
+                    },
+                    "registrationDateTime":{
+                      "type": "string",
+                      "example": "2022-12-28T16:10:37.373Z"
+                    },
+                    "numberOfTickets": {
+                      "type": "number",
+                      "example": 2
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "SuccessAuth": {
+        "description": "Successful authorized the user",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Response"
+                },
+                {
+                  "properties": {
+                    "code": {
+                      "example": "post_neon_auth_login"
+                    },
+                    "message": {
+                      "example": "Success"
+                    },
+                    "data": {
+                      "properties": {
+                        "auth": {
+                          "$ref": "#/components/schemas/Auth"
+                        },
+                        "account": {
+                          "$ref": "#/components/schemas/AccountFull"
+                        },
+                        "orders": {
+                          "$ref": "#/components/schemas/AccountOrders"
+                        },
+                        "recurringDonations": {
+                          "$ref": "#/components/schemas/RecurringDonations"
+                        },
+                        "status": {
+                          "example": 200
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "SuccessNewslatter": {
+        "description": "Successful sending newslatter",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Response"
+                },
+                {
+                  "properties": {
+                    "code": {
+                      "example": "create_neon_newslatter"
+                    },
+                    "message": {
+                      "example": "Success"
+                    },
+                    "data": {
+                      "properties": {
+                        "status": {
+                          "example": 200
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "SuccessSync": {
+        "description": "Successful data synchronization, only those objects in which there were changes will be returned, not changed will return false",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Response"
+                },
+                {
+                  "properties": {
+                    "code": {
+                      "example": "post_sync_sync"
+                    },
+                    "message": {
+                      "example": "Success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "example": 200
+                        },
+                        "account": {
+                          "$ref": "#/components/schemas/AccountFull"
+                        },
+                        "orders": {
+                          "$ref": "#/components/schemas/AccountOrders"
+                        },
+                        "products": {
+                          "$ref": "#/components/schemas/Products"
+                        },
+                        "recurringDonations": {
+                          "$ref": "#/components/schemas/RecurringDonations"
+                        },
+                        "events": {
+                          "$ref": "#/components/schemas/Events"
+                        },
+                        "livestream": {
+                          "$ref": "#/components/schemas/LivestreamVideos"
+                        },
+                        "live": {
+                          "$ref": "#/components/schemas/Lives"
+                        },
+                        "dates": {
+                          "$ref": "#/components/schemas/Dates"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "SuccessUnAuth": {
+        "description": "Successful unauthorized the user",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Response"
+                },
+                {
+                  "properties": {
+                    "code": {
+                      "example": "delete_neon_auth_logout"
+                    },
+                    "message": {
+                      "example": "Success"
+                    },
+                    "data": {
+                      "properties": {
+                        "status": {
+                          "example": 200
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "SuccessAccount": {
+        "description": "Successful creating/getting/updating of account data from NEON CRM",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Response"
+                },
+                {
+                  "properties": {
+                    "code": {
+                      "example": "post_neon_account_register_register"
+                    },
+                    "message": {
+                      "example": "Success"
+                    },
+                    "data": {
+                      "properties": {
+                        "account": {
+                          "$ref": "#/components/schemas/AccountFull"
+                        },
+                        "status": {
+                          "example": 200
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "SuccessAccountPassword": {
+        "description": "Successful updating of account password from NEON CRM",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Response"
+                },
+                {
+                  "properties": {
+                    "code": {
+                      "example": "put_neon_account_update_account_password"
+                    },
+                    "message": {
+                      "example": "Success"
+                    },
+                    "data": {
+                      "properties": {
+                        "account": {
+                          "$ref": "#/components/schemas/AccountFull"
+                        },
+                        "status": {
+                          "example": 200
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "SuccessAccountOrders": {
+        "description": "Successful getting of account orders data from NEON CRM",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AccountOrders"
+            }
+          }
+        }
+      },
+      "SuccessOrders": {
+        "description": "Successful creating Order",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Response"
+                },
+                {
+                  "properties": {
+                    "code": {
+                      "example": "post_neon_orders_updated"
+                    },
+                    "message": {
+                      "example": "Success"
+                    },
+                    "data": {
+                      "properties": {
+                        "orders": {
+                          "$ref": "#/components/schemas/AccountOrders"
+                        },
+                        "status": {
+                          "example": 200
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "SuccessCheckUsername": {
+        "description": "Successful validation of username",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Response"
+                },
+                {
+                  "properties": {
+                    "code": {
+                      "example": "post_neon_check_username"
+                    },
+                    "message": {
+                      "example": "Success"
+                    },
+                    "data": {
+                      "properties": {
+                        "status": {
+                          "example": 200
+                        },
+                        "isAvailable": {
+                          "type": "boolean",
+                          "example": true
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "SuccessCheckEmail": {
+        "description": "Successful validation of email",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Response"
+                },
+                {
+                  "properties": {
+                    "code": {
+                      "example": "post_neon_check_email"
+                    },
+                    "message": {
+                      "example": "Success"
+                    },
+                    "data": {
+                      "properties": {
+                        "status": {
+                          "example": 200
+                        },
+                        "isAvailable": {
+                          "type": "boolean",
+                          "example": true
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "SuccessShippingMethods": {
+        "description": "Successful getting/updating shipping methods",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Response"
+                },
+                {
+                  "properties": {
+                    "code": {
+                      "example": "post_neon_orders_get_shipping_methods"
+                    },
+                    "message": {
+                      "example": "Success"
+                    },
+                    "data": {
+                      "properties": {
+                        "shippingMethods": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "example": "123"
+                              },
+                              "name": {
+                                "type": "string",
+                                "example": "Shipping Method 1"
+                              },
+                              "fee": {
+                                "type": "number",
+                                "example": 0
+                              }
+                            }
+                          }
+                        },
+                        "status": {
+                          "example": 200
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "SuccessOrdersCalculate": {
+        "description": "Successful order calculate",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Response"
+                },
+                {
+                  "properties": {
+                    "code": {
+                      "example": "post_neon_orders_calculate"
+                    },
+                    "message": {
+                      "example": "Success"
+                    },
+                    "data": {
+                      "properties": {
+                        "orderCalculationResult": {
+                          "type": "object",
+                          "properties": {
+                            "totalCharge": {
+                              "type": "number",
+                              "example": 125
+                            },
+                            "subTotal": {
+                              "type": "number",
+                              "example": 115
+                            },
+                            "tax": {
+                              "type": "number",
+                              "example": 11.5
+                            },
+                            "totalDiscount": {
+                              "type": "number",
+                              "example": 0
+                            },
+                            "shippingHandlingFee": {
+                              "type": "number",
+                              "example": 10
+                            }
+                          }
+                        },
+                        "status": {
+                          "example": 200
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "SuccessUpdateRecurringDonations": {
+        "description": "Successful updating of recurring donation from NEON CRM",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Response"
+                },
+                {
+                  "properties": {
+                    "code": {
+                      "example": "post_neon_account_update_recurring_donation"
+                    },
+                    "message": {
+                      "example": "Success"
+                    },
+                    "data": {
+                      "properties": {
+                        "recurringDonations": {
+                          "$ref": "#/components/schemas/RecurringDonations"
+                        },
+                        "status": {
+                          "example": 200
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "SuccessDeleteRecurringDonations": {
+        "description": "Successful deleted of recurring donation from NEON CRM",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Response"
+                },
+                {
+                  "properties": {
+                    "code": {
+                      "example": "delete_neon_account_delete_recurring_donations"
+                    },
+                    "message": {
+                      "example": "Success"
+                    },
+                    "data": {
+                      "properties": {
+                        "recurringDonations": {
+                          "$ref": "#/components/schemas/RecurringDonations"
+                        },
+                        "status": {
+                          "example": 200
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "SuccessUpdateRecurringDonationsPayment": {
+        "description": "Successful updating of recurring donation payment method from NEON CRM",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Response"
+                },
+                {
+                  "properties": {
+                    "code": {
+                      "example": "put_neon_account_recurring_donations_payment"
+                    },
+                    "message": {
+                      "example": "Success"
+                    },
+                    "data": {
+                      "properties": {
+                        "status": {
+                          "example": 200
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "SuccessDonations": {
+        "description": "Successful creating Donation",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Response"
+                },
+                {
+                  "properties": {
+                    "code": {
+                      "example": "post_neon_donations_create"
+                    },
+                    "message": {
+                      "example": "Success"
+                    },
+                    "data": {
+                      "properties": {
+                        "recurringDonations": {
+                          "$ref": "#/components/schemas/RecurringDonations"
+                        },
+                        "status": {
+                          "example": 200
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Unauthorized": {
+        "description": "Error if not authorized in WP",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Response"
+                },
+                {
+                  "properties": {
+                    "code": {
+                      "example": "rest_forbidden"
+                    },
+                    "message": {
+                      "example": "Sorry, you are not allowed to do that."
+                    },
+                    "data": {
+                      "properties": {
+                        "status": {
+                          "example": 401
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "NotFound": {
+        "description": "Error if entry not found in NEON CRM or rout not found in WP",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Response"
+                },
+                {
+                  "properties": {
+                    "code": {
+                      "example": "rest_not_found"
+                    },
+                    "message": {
+                      "example": "Not found"
+                    },
+                    "data": {
+                      "properties": {
+                        "status": {
+                          "example": 404
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Unexpected": {
+        "description": "A critical error occurred at runtime in WP",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Response"
+                },
+                {
+                  "properties": {
+                    "code": {
+                      "example": "rest_critical_error"
+                    },
+                    "message": {
+                      "example": "Critical error"
+                    },
+                    "data": {
+                      "properties": {
+                        "status": {
+                          "example": 500
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "basicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Auth",
+      "description": "See /docs/neon/01-auth.md"
+    },
+    {
+      "name": "Sync",
+      "description": "See /docs/neon/00-intro.md"
+    },
+    {
+      "name": "Account",
+      "description": "See /docs/neon/02-account.md"
+    },
+    {
+      "name": "Orders",
+      "description": "See /docs/neon/03-online-store.md"
+    },
+    {
+      "name": "Donations",
+      "description": "See /docs/neon/04-donations.md"
+    },
+    {
+      "name": "Events",
+      "description": "See /docs/neon/05-events.md"
+    }
+  ]
+}

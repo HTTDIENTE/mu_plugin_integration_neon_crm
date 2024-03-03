@@ -1,0 +1,24 @@
+{
+  "code": "post_neon_order_calculate",
+  "message": "Success",
+  "data": {
+    "status": 200,
+    "orderCalculationResult": {
+      "totalCharge": 150,
+      "subTotal": 0,
+      "tax": 15,
+      "totalDiscount": 0,
+      "shippingHandlingFee": 10,
+      "discounts": [
+        {
+          "orderItemId": "string",
+          "orderItemName": "string",
+          "orderItemType": "DONATION",
+          "discountId": "string",
+          "discountName": "string",
+          "discount": 0
+        }
+      ]
+    }
+  }
+}

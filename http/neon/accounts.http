@@ -1,0 +1,67 @@
+### 500 Error
+
+GET https://api.neoncrm.com/v2/accounts/1
+Authorization: Basic {{BASIC}}
+
+### 404 Error
+
+GET https://api.neoncrm.com/v2/accounts/1000000000
+Authorization: Basic {{BASIC}}
+
+### Get Individual Account (Agape)
+
+GET https://api.neoncrm.com/v2/accounts/41853
+Authorization: Basic {{BASIC}}
+
+### Get Company Account (Agape)
+
+GET https://api.neoncrm.com/v2/accounts/41498
+Authorization: Basic {{BASIC}}
+
+### Create Account
+POST https://api.neoncrm.com/v2/accounts/
+Content-Type: application/json
+Authorization: Basic {{BASIC}}
+
+{
+	"individualAccount": {
+		"login": {
+			"username": "jaclyn.reilly",
+			"password": "123ABC321"
+		},
+		"primaryContact": {
+			"firstName": "Jaclyn",
+			"middleName": "",
+			"lastName": "Reilly",
+			"prefix": "",
+			"suffix": "",
+			"salutation": "",
+			"dob": {
+				"day": "16",
+				"month": "02",
+				"year": "1979"
+			},
+			"gender": {
+				"code": "F"
+			},
+			"email1": "jaclyn.reilly@email.com",
+			"addresses": [
+				{
+					"isPrimaryAddress": true,
+					"addressLine1": "7574 Dulce Manors",
+					"addressLine2": "",
+					"city": "Port Mitzieberg",
+					"stateProvince": {
+						"code": "WA"
+					},
+					"country": {
+						"id": "1"
+					},
+					"zipCode": "51917-7351",
+					"phone1": "+1 469 444 1896"
+				}
+			]
+		},
+		"sendSystemEmail": true
+	}
+}

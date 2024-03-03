@@ -1,0 +1,55 @@
+.payment-form {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	gap: 15px 10px;
+
+	&__card {
+		height: 44px !important;
+		padding: 18px 17px 5px !important;
+		background-color: #ffffff;
+		border-width: 1px;
+		border-style: solid;
+		border-color: #d9d9d9;
+		border-radius: 0;
+		box-sizing: border-box;
+
+		&_error {
+			border-color: #ff4d4f;
+		}
+	}
+
+	.ant-form-item {
+		width: calc(50% - 5px);
+		margin-bottom: 0;
+
+		&:last-of-type {
+			width: 100%;
+		}
+	}
+
+	fieldset {
+		display: flex !important;
+		flex-wrap: wrap;
+		justify-content: flex-start !important;
+		gap: 15px 10px;
+		margin: 0 !important;
+
+		legend {
+			display: none !important;
+		}
+	}
+}
+
+.saved-user-information {
+	width: 100%;
+
+	p {
+		margin-top: 0;
+	}
+}
+
+.NeonPay__field {
+	filter: brightness(0) opacity(0.88);
+}

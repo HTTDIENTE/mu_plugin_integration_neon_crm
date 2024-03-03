@@ -1,0 +1,21 @@
+{
+  "code": "delete_neon_recurring_donations",
+  "message": "Success",
+  "data": {
+    "status": 200,
+    "recurringDonations": [
+      {
+        "id": 1050,
+        "amount": 50,
+        "frequency": "week",
+        "nextDate": "2022-11-22T17:32:28Z"
+      },
+      {
+        "id": 1051,
+        "amount": 250,
+        "frequency": "month",
+        "nextDate": "2022-12-21T17:32:28Z"
+      }
+    ]
+  }
+}

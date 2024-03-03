@@ -1,0 +1,8 @@
+{
+  "code": "post_neon_check_username",
+  "message": "Username is allowed",
+  "data": {
+    "status": 200,
+    "isAvailable": true
+  }
+}

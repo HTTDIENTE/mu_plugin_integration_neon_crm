@@ -1,0 +1,21 @@
+.neon-cart-checkout {
+	position: absolute;
+	top: 15px;
+	left: 48%;
+	transform: translateX(-50%);
+	width: 100%;
+	max-width: 1200px;
+	text-align: right;
+
+	&__open-cart.ant-btn {
+		font-size: 30px;
+		color: #383838;
+	}
+
+	&__open-checkout.ant-btn {
+		font-weight: 500;
+		font-size: 20px;
+		color: #383838;
+		margin-right: 10px;
+	}
+}

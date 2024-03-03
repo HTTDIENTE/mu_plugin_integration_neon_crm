@@ -1,0 +1,15 @@
+### GET Genders
+GET https://api.neoncrm.com/v2/properties/genders
+Authorization: Basic {{BASIC}}
+
+### GET Countries
+GET https://api.neoncrm.com/v2/properties/countries
+Authorization: Basic {{BASIC}}
+
+### GET State / Provinces
+GET https://api.neoncrm.com/v2/properties/stateProvinces
+Authorization: Basic {{BASIC}}
+
+### GET Name Prefixes
+GET https://api.neoncrm.com/v2/properties/prefixes
+Authorization: Basic {{BASIC}}

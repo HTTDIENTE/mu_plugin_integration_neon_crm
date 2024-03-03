@@ -1,0 +1,49 @@
+{
+  "code": "post_neon_account",
+  "message": "Account created.",
+  "data": {
+    "status": 200,
+    "auth": {
+      "authorizationCode": "ZGVtbzpwQDU1dzByZA=="
+    },
+    "account": {
+      "primaryContact": {
+        "addresses": [
+          {
+            "addressId": "1111",
+            "isPrimaryAddress": true,
+            "addressLine1": "7574 Dulce Manors",
+            "addressLine2": "",
+            "city": "Port Mitzieberg",
+            "stateProvince": {
+              "code": "WA"
+            },
+            "country": {
+              "id": "1"
+            },
+            "zipCode": "51917-7351",
+            "phone1": "+1 469 444 1896"
+          }
+        ],
+        "firstName": "Jaclyn",
+        "middleName": "",
+        "lastName": "Reilly",
+        "prefix": "",
+        "suffix": "",
+        "salutation": "",
+        "dob": {
+          "day": "16",
+          "month": "02",
+          "year": "1979"
+        },
+        "gender": {
+          "code": "F"
+        },
+        "email1": "jaclyn.reilly@email.com"
+      },
+      "login": {
+        "username": "jaclyn.reilly"
+      }
+    }
+  }
+}

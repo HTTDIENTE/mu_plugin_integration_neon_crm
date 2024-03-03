@@ -1,0 +1,102 @@
+.events {
+	&__calendar-items {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	&__calendar-item {
+		margin-bottom: 5px;
+
+		a {
+			display: inline-block;
+			font-size: 14px;
+			line-height: 16px;
+			color: #383838;
+			text-decoration: none;
+			background: rgba(176, 196, 222, 0.3);
+			border-radius: 2px;
+			padding: 5px;
+			transition: 0.3s;
+
+			&:hover {
+				color: #fff;
+				background: lightslategrey;
+				box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+			}
+		}
+	}
+
+	.ant-picker-calendar.ant-picker-calendar-full {
+		.ant-picker-calendar-header {
+			display: none;
+		}
+
+		.ant-picker-calendar-date-content {
+			padding-right: 3px;
+			height: auto;
+			scrollbar-width: thin;
+			scrollbar-color: lightsteelblue #f3f4f5;
+
+			&::-webkit-scrollbar {
+				height: 3px;
+				width: 3px;
+			}
+
+			&::-webkit-scrollbar-track {
+				background: #f3f4f5;
+				border-radius: 2px;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background: lightsteelblue;
+				border-radius: 2px;
+			}
+		}
+
+		.ant-picker-content {
+			tr {
+				vertical-align: top;
+				height: 85px;
+			}
+		}
+
+		.ant-picker-cell-inner {
+			background: none !important;
+		}
+
+		.ant-picker-cell-selected {
+			.ant-picker-calendar-date .ant-picker-calendar-date-value {
+				color: #383838 !important;
+			}
+		}
+
+		.ant-picker-cell {
+			position: relative;
+
+			&:hover {
+				&::after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 4px;
+					width: calc(100% - 8px);
+					height: calc(100% - 4px);
+					background: rgba(0, 0, 0, 0.04);;
+				}
+			}
+
+			&.ant-picker-cell-today {
+				&::after {
+					content: '';
+					position: absolute;
+					top: 2px;
+					left: 4px;
+					width: calc(100% - 8px);
+					height: calc(100% - 4px);
+					background: #e6f4ff;
+				}
+			}
+		}
+	}
+}
